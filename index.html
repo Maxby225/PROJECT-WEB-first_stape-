@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*cette algo permet de verifier si un mot est un palindrome , un palindrome est définie comme un mot 
+        qui peux se lire et s'écrire de la même façon quand celui si est renversé */
+            function isPalindrome (word){
+                const letters = word.split('')
+                letters.reverse()
+                const reverseWord =letters.join('')
+                return word.toUpperCase() === reverseWord.toUpperCase()
+            }
+            const words = {
+                kayak:true,
+                SOS: true,
+                Kayak: true,
+                Bonjour: false,
+            }
+            for(let word in words) {
+                if (isPalindrome(word) !== words[word]){
+                    console.error(`ispalindrome(${word}) en tout cas okok!!`)
+                }
+            }
+    </script>
+</body>
+</html>
