@@ -10,10 +10,12 @@
         /*cette algo permet de verifier si un mot est un palindrome , un palindrome est définie comme un mot 
         qui peux se lire et s'écrire de la même façon quand celui si est renversé */
             function isPalindrome (word){
-                const letters = word.split('')
-                letters.reverse()
-                const reverseWord =letters.join('')
+                const reverseWord =word
+                .split('')
+                .reverse()
+                .join('')
                 return word.toUpperCase() === reverseWord.toUpperCase()
+            
             }
             const words = {
                 kayak:true,
