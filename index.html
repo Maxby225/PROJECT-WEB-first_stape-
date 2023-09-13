@@ -8,7 +8,7 @@
 <body>
     <script>
         /*cette algo permet de verifier si un mot est un palindrome , un palindrome est définie comme un mot 
-        qui peux se lire et s'écrire de la même façon quand celui si est renversé */
+        qui peux se lire et s'écrire de la même façon quand celui si est renversé 
             function isPalindrome (word){
                 const reverseWord =word
                 .split('')
@@ -26,8 +26,54 @@
             for(let word in words) {
                 if (isPalindrome(word) !== words[word]){
                     console.error(`ispalindrome(${word}) en tout cas okok!!`)
+                }*/
+                /*--------------------CoDe-----------------------*/
+
+                /*CoDe sur trois volée */
+                /*1_calcule de moyen*/
+
+                const moyenne = (notes) => {
+                    let sum = 0
+                    for (let note of notes){
+
+                        sum = sum + note
+
+                    }
+                    return sum / notes.length
+
+
                 }
-            }
+
+                for (let student of students){
+                    student.moyenne = moyenne(students.notes)
+                }
+
+                console.log(students)
+
+                const  students = [
+                    {
+                        name: 'John',
+                        notes:[1,20,18,19,12]
+                    },
+                    {
+                        name: 'Jane',
+                        notes:[17,18,20,13,15]
+
+                    },
+                    {
+                        name: 'Sophie',
+                        notes:[17,12,14,15,13]
+                    },
+                    {
+                        name: 'Marc',
+                        notes:[2,3,5,8,9]
+                    },
+                    {
+                        name: 'Manon',
+                        notes:[18,17,18,19,12]
+                    }
+                ]
+            
     </script>
 </body>
 </html>
