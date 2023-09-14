@@ -88,6 +88,38 @@
             ${formateStudents(students[1])}
             ${formateStudents(students[3])}
         `)  */
+        // Exo3: Calculé la fréquence de mot dans un chaine de caractère
+
+        const phrase =`Vous savez, moi je ne crois pas ,...beaux, aujourd'hui ,!,au,, avancer, avec , je vous dirai , même avec moi, et si moi , en dirai un chien moi , la moto moi , le chien , O'choo la!!, si oui la , en plus la ,et bien moi , même chise `
+        const frequencies = {}
+        const words = phrase
+        .toLowerCase()
+        .replaceAll('!' , '')
+        .replaceAll(',', '')
+        .replaceAll('...','')
+        .split(' ')
+        for(let word of words) 
+            
+            if(word !== ''){
+                if ( frequencies[word]){
+                     frequencies[word]++
+                } else {
+                    frequencies[word] = 1
+                }
+            }
+            const frequenciesArray = []
+            for (let k in frequencies){
+                frequenciesArray.push({
+                    word: k,
+                    count:frequencies[k]
+                })
+            }
+            frequenciesArray.sort((a, b) => b.count - a.count)
+            console.log(`les mots les plus fréquents sont ${frequenciesArray[0].
+                word}, ${frequenciesArray[1].word}, ${frequenciesArray[2].word}`)
+        
+        
+        
     </script>
 </body>
 </html>
