@@ -32,23 +32,6 @@
                 /*CoDe sur trois volée */
                 /*1_calcule de moyen*/
 
-                const moyenne = (notes) => {
-                    let sum = 0
-                    for (let note of notes){
-
-                        sum = sum + note
-
-                    }
-                    return sum / notes.length
-
-
-                }
-
-                for (let student of students){
-                    student.moyenne = moyenne(students.notes)
-                }
-
-                console.log(students)
 
                 const  students = [
                     {
@@ -73,7 +56,38 @@
                         notes:[18,17,18,19,12]
                     }
                 ]
-            
+
+                const moyenne = (notes) => {
+                    let sum = 0
+                    for (let note of notes) {
+
+                        sum = sum + note
+                    }
+                    return sum / notes.length
+                }
+                
+                for (let student of students){
+                    student.moyenne = moyenne(student.notes)
+                    student.worst = Math.min(...student.notes)
+                    student.best = Math.max(...student.notes)
+                }
+               
+                
+            /* classé les étudiant*/
+            const compareStudent = (a, b) => {
+                return b.moyenne = a.moyenne
+            }
+            students.sort(compareStudent)
+
+            const formateStudents = (student) => {
+                return `${student.name} avec une moyenne de ${student.moyenne}, meilleur note (${student.best}), pire note (${student.worst}`
+            }
+
+            console.log(`Top 3 etudiant
+            ${formateStudents(students[0])} 
+            ${formateStudents(students[1])}
+            ${formateStudents(students[3])}
+        `)  
     </script>
 </body>
 </html>
