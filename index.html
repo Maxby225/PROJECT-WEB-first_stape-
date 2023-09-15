@@ -7,6 +7,54 @@
 </head>
 <body>
     <script>
+        // exercice Classe , prototype , objet 
+
+        class Rectangle {
+
+            constructor (width, height){
+
+                this.width = width
+                this.height = height
+
+            }
+
+            get perimeter ()   {
+
+                return this.width * 2 + this.height * 2
+            }
+
+            get isValid() {
+                return this.width > 0 &&  this.height > 0
+            }
+
+            isBiggerThan (shape){
+
+                return this.perimeter > shape.perimeter
+
+            }
+
+        }
+
+        class Square extends Rectangle{
+
+            constructor(widht) {
+                super(widht, widht)
+            }
+        }
+        
+        const r = new Rectangle(10, 20);
+        console.log(r.perimeter) 
+        console.log(r.isValid)
+        const r2 = new Rectangle(-10, 20)
+        console.log(r2.isValid)
+        const c = new Square(10);
+        console.log(c.perimeter)
+        console.log(r.isBiggerThan(c))
+
+
+
+
+
         /*cette algo permet de verifier si un mot est un palindrome , un palindrome est définie comme un mot 
         qui peux se lire et s'écrire de la même façon quand celui si est renversé 
             function isPalindrome (word){
@@ -31,8 +79,8 @@
 
                 /*CoDe sur trois volée */
                 /*1_calcule de moyen*/
-
 /*
+
                 const  students = [
                     {
                         name: 'John',
@@ -71,7 +119,7 @@
                     student.worst = Math.min(...student.notes)
                     student.best = Math.max(...student.notes)
                 }
-               
+               */
                 
             /* classé les étudiant*/
            /* const compareStudent = (a, b) => {
@@ -90,7 +138,7 @@
         `)  */
         // Exo3: Calculé la fréquence de mot dans un chaine de caractère
 
-        const phrase =`Vous savez, moi je ne crois pas ,...beaux, aujourd'hui ,!,au,, avancer, avec , je vous dirai , même avec moi, et si moi , en dirai un chien moi , la moto moi , le chien , O'choo la!!, si oui la , en plus la ,et bien moi , même chise `
+       /* const phrase =`Vous savez, moi je ne crois pas ,...beaux, aujourd'hui ,!,au,, avancer, avec , je vous dirai , même avec moi, et si moi , en dirai un chien moi , la moto moi , le chien , O'choo la!!, si oui la , en plus la ,et bien moi , même chise `
         const frequencies = {}
         const words = phrase
         .toLowerCase()
@@ -117,9 +165,42 @@
             frequenciesArray.sort((a, b) => b.count - a.count)
             console.log(`les mots les plus fréquents sont ${frequenciesArray[0].
                 word}, ${frequenciesArray[1].word}, ${frequenciesArray[2].word}`)
-        
-        
-        
+        */
+            /*Class POO Javascript*/
+      /*  class Student {
+                ecole = 'jule ferry'
+
+                constructor (prenom, nom) {
+                    this.prenom = prenom 
+                    this.nom = nom 
+                }
+
+
+                set notes (v) {
+                    if (Array.isArray(v)){
+
+                        this._notes = v
+
+                    }
+                  
+                }
+
+                get name () {
+                    return `${this.prenom} ${this.nom}`
+                }
+                  
+
+                canPass() {
+                    return moyenne(this._notes) >= 10
+                    
+                }
+        }
+
+        const john = new Student('john', 'Done')
+        const jane = new Student('jane', 'lili')
+        john.notes = [10] 
+        jane.notes = [15, 18, 19]
+        console.log(john.name)      */  
     </script>
 </body>
 </html>
