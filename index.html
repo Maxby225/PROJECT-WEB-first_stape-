@@ -7,11 +7,51 @@
 </head>
 <body>
     <script>
-        // exercice Classe , prototype , objet 
+        //sucre syntaxique 
+        const double = n => n * 3
+        console.log(double(3))
+        
+    
 
+       /* 
+       //
+        //Array 
+        const notes = [12,17,18,5,8,9]
+        console.log(notes[notes.length - 1])
+        console.log(notes.at(-1))
+        //retiré des element de la tab grace a des condition
+        const godnotes = notes.filter((note) => note < 10)
+        console.log(godnotes)
+        notes.forEach((note, index) => {
+            console.log(note, index)
+        })
+        console.log(notes.includes(17))
+        const personnes = [
+            {firstname : 'john', lastname: 'Doe'},
+            {firstname : 'jane', lastname: 'Doe'},
+            {firstname : 'Marc', lastname: 'Doe'},
+            {firstname : 'Manon', lastname: 'Doe'},
+        ]
+
+        //map convertire un tab en un autre tab avec des valeur diff qui auront la même taiile
+    console.log(
+        personnes
+                .map((p) => p.firstname + ' ' + p.lastname)   
+                .join('\n')     
+    )
+    //reduire les diff valeur pour obtenir une valeur unique   
+    console.log(
+        notes.reduce((acc, note) => {
+                return acc + note
+        }, 0)
+    )// exercice Classe , prototype , objet 
+        /*
         class Rectangle {
 
             constructor (width, height){
+                if(width <= 0 || height <= 0){
+                    throw new Error(`impossible d'avoir un rectangla avec des dimention négatif`)
+                }
 
                 this.width = width
                 this.height = height
@@ -41,16 +81,127 @@
                 super(widht, widht)
             }
         }
+
+        function promptRectangle () {
+
+            try {
+            const widht = prompt('Largeur') *1
+            const height = prompt('hauteur') *1
+            const r2 = new Rectangle(widht, height)
+            return r2 
+
+        } catch (e) {
+                throw new Error('impossibe de construire la forme')
+        }
+
+        }
+
         
-        const r = new Rectangle(10, 20);
-        console.log(r.perimeter) 
+        try {
+            promptRectangle()
+
+        } catch(e){
+            console.log(e.message,{e})
+
+        }
+        
+       */
+
+       /* const r = new Rectangle(10, 20);
+        
         console.log(r.isValid)
-        const r2 = new Rectangle(-10, 20)
+        console.log(r.perimeter) 
         console.log(r2.isValid)
         const c = new Square(10);
         console.log(c.perimeter)
-        console.log(r.isBiggerThan(c))
+        console.log(r.isBiggerThan(c)) */
 
+        // exo2Classe
+       /* 
+        class Book {
+
+            #page  = 1
+
+            constructor (title, pages) {
+                this.title = title
+                this.pages = pages
+        
+            }
+
+            get page () {
+
+                return this.#page
+            }
+
+            nextPage () {
+                if (this.#page < this.pages){
+                    this.#page++
+                }
+            }
+
+            close () {
+                this.#page = 1
+            }
+           
+           
+        }
+/*
+        class library {
+
+            #books = []
+
+            addBook(book) {
+           
+                this.#books.push(book)
+
+            }
+
+            addBooks(books) {
+
+                for(let book of books){
+                    this.addBook(book)
+                }
+
+            }
+
+            findBooksByLetter(letter) {
+              return  this.#books.filter((book) =>  book.title[0].toLowerCase() === letter.toLowerCase)
+                
+                /*const found = []
+                for(let book of this.#books) {
+                    if (book.title[0].toLowerCase() === letter.toLowerCase){
+                        
+                        found.push(book)
+                    }
+                    return  found
+                    
+                }
+    
+                return found*/
+/*              }
+
+
+
+ /*       } 
+        */
+/*
+       const b = new Book('Seigneur des anneaux', 200)
+       console.log(b.page)
+       b.nextPage()
+       console.log(b.page)
+       b.close()
+       console.log(b.page)
+
+       const l = new library(); 
+       l.addBook(b)
+       l.addBooks([
+        new Book('Ready player one', 100),
+        new Book('Oui-Oui', 10),
+        new Book('Sillage', 50)
+       ])
+
+       
+    console.log(l.findBooksByLetter('S')) */
 
 
 
