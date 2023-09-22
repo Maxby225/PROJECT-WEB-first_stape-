@@ -1,8 +1,17 @@
-import {fetchJSON} from "./ApiDom.js";
-try{
+/**
+ * 
+ * @param {string} tagName
+ * @param {object} attributes
+ * @return{HTMLElement}
+ */
 
-    const todos = await fetchJSON('https://jsaonplaceholder.typicode.com/todos?_limit=5')
-console.log(todos)
-} catch (e) {
-    createElement('div')
+export function createElement(tagName,attributes = {}){
+    const element = document.createElement(tagName)
+    for (const [attribute, value] of Object.entries(attributes)){
+        if (value !== null){
+
+            element.setAttribute(attribute, value)
+        }
+    }
+    return element 
 }
